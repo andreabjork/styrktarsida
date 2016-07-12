@@ -1,12 +1,26 @@
-* { margin: 0; padding: 0;}
+/* z-index order:
+* header: 5
+* nav: 4
+* aside: 3
+* main: 2
+*
+*
+*/
 
-html, body { height: 100%; }
+* { margin: 0; padding: 0; font-family: 'Lora', serif; color: #333;}
+
+
+html { 
+    height:100%;
+    min-height: 870px;
+}
+body { 
+    height: 100%;
+    min-height:100%;
+}
 
 body {
   width: 100%;
-  min-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
   background-color: #fffffa;
 }
 
@@ -16,26 +30,34 @@ header {
   box-shadow:         0px 2px 3px 1px #ccc;
   background-color: #fffffa;
   position: relative;
-  z-index: 3; /*highest order*/
-  height: 24%;
+  z-index: 5; /*highest order*/
+  height: 20%;
 }
 
   header nav {
-    display: none; /*Not sure we want nav? change to flex*/
-    background-color: #0C4266;
+    display: flex; /*Not sure we want nav? change to flex*/
+    background-color: #1F1739;
     margin-left: auto;
     margin-right: auto;
-    height: 25px;
+    height: 22px;
     align-items: center;
     justify-content: center;
     flex-flow: row wrap;
+    position: relative;
+    z-index: 4;
   }
 
+    nav .activeTab {
+      -moz-box-shadow:    0px -20px 0px 0px green;
+      -webkit-box-shadow: 0px -20px 0px 0px green;
+      box-shadow:         0px -20px 0px 0px green;
+    }
 
     nav a:link {
+      font-weight: 600;
       text-decoration: none;
       color: #fffffa;
-      padding: 0.5px;
+      padding: 0.07em;
       padding-left: 45px;
       padding-right: 45px;
       margin-left: 0px;
@@ -43,22 +65,25 @@ header {
     }
 
     nav a:visited {
+        color: #fffffa;
         text-decoration: none;
     }
 
     nav a:hover {
-        text-decoration: underline;
-        background-color: #3A87BA;
+        color: #fffffa;
+        text-decoration: none;
+        background-color: #0F63B3;
     }
 
     nav a:active {
-        text-decoration: underline;
+        color: #fffffa;
+        text-decoration: none;
     }
 
   header img {
     display: block;
-    width: 80%;
-    max-width: 570px;
+    max-height: 100%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -69,34 +94,50 @@ header {
   justify-content: center;
   flex-flow: row wrap;
   width: 100%;
-  height: 73%;
+  height: 77%;
   margin-left: auto;
   margin-right: auto;
 }
 
   .container main {
     position: relative;
-    z-index: 1;
-    width: 65%;
+    z-index: 2;
+    width: 68%;
+    margin-left: 5%;
     height: 100%;
   }
-
     main ul {
       list-style: none;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: left;
+      justify-content: space-around;
     }
 
-main li {
-  float: bottom;
-}
+    main li {
+      display: block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    main li * {
+      vertical-align: middle;
+      
+    }
 
     main form{
        margin-top: 20px;
-       margin-left: 5%;
        width: 90%;
     }
 
-    main form * {
-      margin: 10px;
+    main h1 {
+      margin-top: 60px;
+      font-size: 3em;
+    }
+
+    main form label, input {
+      margin-top: 10px;
+      margin-bottom: 10px;
       font-size: 1.1em;
       vertical-align: center;
       align: middle;
@@ -104,44 +145,142 @@ main li {
 
     main form label {
       float: left;
-      font-size: 1.3em;
-      margin: 14px 0px 14px 0px;
+      font-style: italic;
+      line-height: 2;
+      margin-left: 140px;
+      font-size: 1.2em;
     }
 
     main form input {
       height: 1.5em;
-      float: right;
-
-
+      color: #666;
     }
+
+    main form #amount {
+       position: relative;
+       width: 100%;
+       height: 100px;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+       background-color: #f4f4f4;
+       text-align: center;
+       text-shadow: 2px 2px #ccc;
+       font-size: 3.5em;
+    }
+
+    main form #address {
+      width: 362px;
+      float: right;
+      margin-right: 30px;
+    }
+
+    main #smlyReward {
+      color: #333;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      
+    }
+
+      main #smlyReward h2 {
+         font-size: 1.2em;
+
+      } 
+
+      main #smlyReward p {
+        font-size 1.1em: ;
+      }
+
+    main #smlyInfo{
+      font-size: 0.8em;
+      color: #333;
+      align-self: end;
+      width: 368px;
+      margin-right: 30px;
+    } 
+
+    #fundBtn {
+      width: 368px;
+      font-weight: 600;
+      height: 90px;
+      margin-top: 100px;
+      float: right;
+      margin-right: 30px;
+      background-color: #1F1739;
+      border: none;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      color: #fffffa;
+      -moz-box-shadow:    inset -2px -2px 1px 1px #31245b;
+      -webkit-box-shadow: inset -2px -2px 1px 1px #31245b;
+      box-shadow:         inset -2px -2px 1px 1px #31245b;
+    }
+
+    #fundBtn:active {
+        background-color:#0F63B3;
+        -moz-box-shadow:    inset 2px 2px 1px 1px #0b4f8e;
+        -webkit-box-shadow: inset 2px 2px 1px 1px #0b4f8e;
+        box-shadow:         inset 2px 2px 1px 1px #0b4f8e;
+    }
+
+
+
 
   .container aside {
     position: relative;
-    z-index: 4;
+    z-index: 3;
     -moz-box-shadow:    -2px 0px 3px 1px #ccc;
     -webkit-box-shadow: -2px 0px 3px 1px #ccc;
     box-shadow:         -2px 0px 3px 1px #ccc;
-    width: 35%;
+    width: 27%;
     height: 100%;
-    background-color: #0C4266;
-    color: #fffffa  ;
+    background-color: #0F63B3;
+    color: #fffffa;
   }
 
   .container aside article {
-   margin: 25px;
+   margin: 55px;
   }
 
-  .container aside article p {
+  .container aside article h2 {
+    color: #fffffa;
+  }
+
+  .container aside article p{
    font-size: 0.9em;
+   color: #fffffa;
   }
 
 footer {
   width: 100%;
-  height: 3%;
   position: relative;
-  z-index: 5;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #0C4266;
+  z-index: 6;
+  background-color: #1F1739;
+  border-top: 1px solid #fffffa;
+  text-align: center;
+  height: 3%;
+  line-height: 1.7;
+}
+
+footer p, h3 {
   color: #fffffa;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #fffffa;
+  font-size: 0.9em;
+  position: absolute;
+  right: 20px;
+  line-height: 1.7;
+  text-decoration: underline;
+}
+
+/* For mobile */
+@media screen and (max-width: 600px) {
+  header nav {
+    display: flex; /*Not sure we want nav? change to flex*/
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+  }
 }
