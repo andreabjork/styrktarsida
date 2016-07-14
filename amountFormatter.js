@@ -4,19 +4,28 @@ var exchangeRate = 2;
 // so we can update the value
 $(function() {
 
-	updateUI();
+	updateUI(getCurrentData());
 
 	$("#amount").click(function() {
 		$(this).val("");
 	});
 
 	$("#amount").change(function() {
-		updateUI();
+		var current = getCurrentData();
+		updateUI(current);
+		updateDalpayBtn(current);
 	});
 });
 
-function updateUI() {
-	var current = parseInput($("#amount"), "ISK");
+function getCurrentData() {
+	return parseInput($("#amount"), "ISK");
+}
+
+function updateDalpayBtn(current) {
+	$('input[name="item1_price"]').val(current["amountVal"]);
+}
+
+function updateUI(current) {
 	updateAmountField(current);
 	updateSMLYGift(current);
 }
