@@ -16,41 +16,63 @@
          <nav>
             <div class="flexNavBtns">
               <a href="index.html">Viltu styrkja?</a>
-              <a href="wallet.html">SMLY Veski</a> 
-              <a href="smly.html">Hvað er SMLY?</a>
-              <a href="eias.html">Um okkur</a> 
+              <a href="eias.html">Um Education in a Suitcase</a> 
             </div>
          </nav>
       </header>
-      <div class="container"> <!-- shit will be flexible -->
-         <main>
+      <div class="container">
+         <main class="smallScreenFlex columnFlex">
             <h1>Styrktarupphæð:</h1>
-            <form>
+            <form class="smallScreenFlex" action="https://secure.dalpay.is/cgi-bin/order2/processorder1.pl" method="POST">
                <ul>
                <li>
                   <input type="text" name="upphæð" id="amount" value="1.000 ISK" name="Upphæð" min="1" max="1000000000" step="1"/>
                </li>
-               <article id="smlyReward"><h2>Við viljum verðlauna alla styrki!</h2><p> Fyrir styrk að upphæð <strong><span id="fundAmount"></span></strong>  viljum við gefa þér <strong><span id="smlyAmount"></span></strong>. Gefðu upp broskallareikning í reitnum hér að neðan og þú færð upphæðina senda þegar þú styrkir okkur.</p></article>
-               <li>
-                  <label for="amount">Broskallareikningur</label>
-                  <input type="text" name="broskallareikningur" id="address" placeholder="BGs1L33mgDz8mUAE5h3bgmuo7s9r5Et8ne" />
+               <li class="leftLi"><article id="smlyReward"><h2>Megum við senda þér broskall?</h2></article></li>
+               <li class="centerLi">
+                  <label for="amount">Broskallaveski</label>
+                  <div class="columnFlex"><input type="text" name="broskallareikningur" id="address" placeholder="BGs1L33mgDz8mUAE5h3bgmuo7s9r5Et8ne" />
+                  <p id="smlyInfo">Áttu ekki broskallaveski?<a href="wallet.html"> Smelltu hér</a> til að sækja veski.</p></div>
                </li>
-               <p id="smlyInfo">Áttu ekki broskallaveski? <a href="wallet.html">Smelltu hér</a> til að sækja veski.</p>
+               <li class="rightLi">
+               <!-- ------------------- DALPAY INTEGRATION ------------------- -->
+               <input type="hidden" name="__FORM_ID__" value="1777f63f0ab6e468cabd8fa5efe3e3f3a838f4ec">
+               <input type="hidden" name="CSRFToken" value="ae56da1a17f7651cf0b1f7bf210210e529e32a9b">
+               <input type="hidden" name="MerchantID" value="160705">
+               <input type="hidden" name="PageID" value="1">
+               <input type="hidden" name="item1_qty" value="1">
+               <input type="hidden" name="item1_desc" value="Donation">
+               <input type="hidden" name="item1_price" value="0.00">
+               <!--<input type="image" src="http://secure.dalpay.is/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Buy Now from DalPay Retail - checkout is secure and private.">-->
+               <input type="submit" id="fundBtn" value="Styrkja &#x00A; Education in a Suitcase" name="submit" alt="Buy Now from DalPay Retail - checkout is secure and private."/> </li>
+               <br />
+               DalPay is an authorized retailer for<br />
+               goods and services provided by Styrktarfélagið Broskallar. 
+               <!-- ------------------------------------------------------- -->
                </ul>
-
-               <input type=button id="fundBtn" value="Styrkja &#x00A; Education in a Suitcase"/>  
-            </form>
+               </form>
          </main>
          <aside>
             <article>
-               <h2>Velkomin á styrktarsíðu Education in a Suitcase</h2>
+               <h2>Styrktarfélagið Broskallar</h2>
                </br>
-               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+               <p>Styrktarfélagið Broskallar safnar fé til kaupa á spjaldtölvum og vefþjónum,
+fyrir verkefnið Education in a Suitcase. Ókeypis efni er hlaðið á tölvurnar
+og þær síðan gefnar nemendum á fátækum svæðum, sérstaklega Kenía. Tölvurnar eru persónulega afhentar hverjum nemanda.
+Styrktarféð fer eingöngu í kaup á búnaði og uppsetningu. Kostnaður við
+ferðir er greiddur af öðru en þessu styrktarfé. Lesið
+nánar um verkefnið hér: <br>
+<a href="https://www.facebook.com/education.in.a.suitcase">https://www.facebook.com/education.in.a.suitcase</a> 
+<br>
+og hér: 
+<br>
+<a href="http://educationinasuitcase.com/">http://educationinasuitcase.com/</a></p>
             </article>
          </aside>
       </div>
       <footer>
-         <p>Education in a Suitcase @ 2016 <a href="mailto:education.in.a.suitcase@gmail.com">education.in.a.suitcase@gmail.com</a> </p>
+         <p>Education in a Suitcase @ 2016 </p>
+         <a href="mailto:education.in.a.suitcase@gmail.com">education.in.a.suitcase@gmail.com</a> 
       </footer>
    </body>
 </html>
