@@ -22,19 +22,19 @@
       </header>
       <div class="container">
          <main class="smallScreenFlex columnFlex">
-            <h1>Styrktarupphæð:</h1>
-            <form class="smallScreenFlex" action="https://secure.dalpay.is/cgi-bin/order2/processorder1.pl" method="POST">
-               <ul>
+            <form class="smallScreenFlex columnFlex" action="https://secure.dalpay.is/cgi-bin/order2/processorder1.pl" method="POST">
+               <ul class="columnFlex">
+               <li class="leftFlex"><h1>Styrktarupphæð:</h1></li>
                <li>
                   <input type="text" name="upphæð" id="amount" value="1.000 ISK" name="Upphæð" min="1" max="1000000000" step="1"/>
                </li>
-               <li class="leftLi"><article id="smlyReward"><h2>Megum við senda þér broskall?</h2></article></li>
-               <li class="centerLi">
+               <li class="leftFlex"><article id="smlyReward"><h2>Megum við senda þér broskall?</h2></article></li>
+               <li class="rowFlex centerFlex">
                   <label for="amount">Broskallaveski</label>
                   <div class="columnFlex"><input type="text" name="broskallareikningur" id="address" placeholder="BGs1L33mgDz8mUAE5h3bgmuo7s9r5Et8ne" />
                   <p id="smlyInfo">Áttu ekki broskallaveski?<a href="wallet.html"> Smelltu hér</a> til að sækja veski.</p></div>
                </li>
-               <li class="rightLi">
+               <li class="rightFlex">
                <!-- ------------------- DALPAY INTEGRATION ------------------- -->
                <input type="hidden" name="__FORM_ID__" value="1777f63f0ab6e468cabd8fa5efe3e3f3a838f4ec">
                <input type="hidden" name="CSRFToken" value="ae56da1a17f7651cf0b1f7bf210210e529e32a9b">
@@ -45,9 +45,9 @@
                <input type="hidden" name="item1_price" value="0.00">
                <!--<input type="image" src="http://secure.dalpay.is/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Buy Now from DalPay Retail - checkout is secure and private.">-->
                <input type="submit" id="fundBtn" value="Styrkja &#x00A; Education in a Suitcase" name="submit" alt="Buy Now from DalPay Retail - checkout is secure and private."/> </li>
-               <br />
-               DalPay is an authorized retailer for<br />
-               goods and services provided by Styrktarfélagið Broskallar. 
+               <li class="rightFlex ">
+               DalPay is an authorized retailer for goods and <br /> 
+               services provided by Styrktarfélagið Broskallar. </li>
                <!-- ------------------------------------------------------- -->
                </ul>
                </form>

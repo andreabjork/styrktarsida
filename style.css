@@ -109,7 +109,9 @@ header {
     position: relative;
     z-index: 2;
     width: 70%;
+    align-items: center;
   }
+
     main ul {
       width: 100%;
       list-style: none;
@@ -125,7 +127,7 @@ header {
       max-width: 800px;
       padding-bottom: 30px;
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: column wrap;
       align-items: center;
       justify-content: space-around;
     }
@@ -145,15 +147,17 @@ header {
       align-content: center;
     }
 
-    main .leftLi {
-      
+
+    .leftFlex {
+      align-items: flex-start;
     }
 
-    main .centerLi {
-      
+    .centerFlex {
+      align-items: center;
     }
 
-    main .rightLi {
+    .rightFlex {
+      align-items: flex-end;
     }
 
     main form label, input {
@@ -195,6 +199,13 @@ header {
       align-items: center;
       justify-content: space-around;
     }
+
+    .rowFlex {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+
 
     main #smlyReward {
       color: #333;
@@ -269,12 +280,9 @@ header {
   .container aside article p{
    font-size: 0.9em;
    color: #fffffa;
+   overflow: hidden;
   }
 
-  .container aside article a{
-    display: inline-block;
-    padding: 20px;
-  }
 
 footer {
   width: 100%;
@@ -305,6 +313,10 @@ footer a {
   margin-right: 10px;
 }
 
+.walletSite a {
+  color: #333;
+}
+
 /* For mobile */
 @media screen and (max-width: 900px) {
 
@@ -330,7 +342,7 @@ footer a {
     display: flex;
   }
 
-  main h1 {
+  main form li h1 {
     margin-top: 30px;
     font-size: 2.4em;
   }
@@ -341,6 +353,14 @@ footer a {
     align-items: center;
     justify-content: space-around;
   }
+
+    .leftFlex {
+      align-items: center;
+    }
+
+    .rightFlex {
+      align-items: center;
+    }
 
   .container aside {
     width: 100%;

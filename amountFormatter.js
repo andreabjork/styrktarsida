@@ -1,42 +1,60 @@
-var exchangeRate = 2;
+var giftRatio = 2;
 
 // On page rendering, add a click event and onChange event to the amount field
 // so we can update the value
 $(function() {
 
-	updateUI(getCurrentData());
+	// Update the page on pageload...
+	update();
 
+	// ... as well as on every page change.
+	$("#amount").change(function() {
+		update();
+	});
+
+	// Empty number field on click to write new amount.
 	$("#amount").click(function() {
 		$(this).val("");
 	});
 
-	$("#amount").change(function() {
-		var current = getCurrentData();
-		updateUI(current);
-		updateDalpayBtn(current);
-	});
+
 });
 
+// Grabs the data from the form fields, updates the UI accordingly
+// and sets the price of the Dalpay form as the number from the number field.
+function update() {
+	var current = getCurrentData();
+	updateUI(current);
+	updateDalpayBtn(current);
+}
+
+// Gets data from the number field and parses it.
+// Return value is of the form {"amountVal": 1000, "stringVal": "1.000 ISK"}
 function getCurrentData() {
 	return parseInput($("#amount"), "ISK");
 }
 
+// Updates the input item1_price with the price of the donation
 function updateDalpayBtn(current) {
 	$('input[name="item1_price"]').val(current["amountVal"]);
 }
 
+// Update both amount field and the span containing the SMLY gift amount
 function updateUI(current) {
 	updateAmountField(current);
 	updateSMLYGift(current);
 }
 
+//  Amount field should always hold the stringValue of the current amount.
+//  If an invalid amount was entered, this is simply 0 ISK
 function updateAmountField(current) {
 	$("#amount").val(current["stringVal"]);
 }
 
+// Smly gift is currently two times that of the amount Value.
 function updateSMLYGift(current) {
 	donation = current["stringVal"];
-	gift = (parseAmountString((current["amountVal"]*exchangeRate).toString(), "SMLY"))["stringVal"];
+	gift = (parseAmountString((current["amountVal"]*giftRatio).toString(), "SMLY"))["stringVal"];
 	$("#fundAmount").html(donation);
 	$("#smlyAmount").html(gift);
 }
@@ -52,6 +70,8 @@ function parseInput(amountField, ticker) {
 	return parseAmountString($(amountField).val(), ticker);
 }
 
+// Grab input as above and create an object like
+// {"amountVal": 1000, "stringVal": "1.000 ISK"}
 function parseAmountString(amountStr, ticker) {
 	var input = amountStr;
 	var amount = (input.split(",")[0]).replaceAll(".", "").replaceAll(" ", "").replaceAll("-").replaceAll("ISK", "");
