@@ -16,6 +16,26 @@ $(function() {
 	$("#amount").click(function() {
 		$(this).val("");
 	});
+/*
+	$("#fundBtn").click(function() {
+		console.log("clicked this button");
+		$.ajax({
+			type: 'POST',
+			// make sure you respect the same origin policy with this url:
+			// http://en.wikipedia.org/wiki/Same_origin_policy
+			url: 'http://educationinasuitcase.com/sendEmail.php',
+			data: { 
+			'smly_addr': 'wannasee', 
+			'remote_addr': 'ifthis',
+			'order_datetime': 'works',
+			'total_amount': 'first'
+			},
+			success: function(msg){
+				console.log("Managed to post the data to sendEmail.php, now submitting...");
+				$("#dalpayForm").submit();    
+			}
+		});
+	});*/
 
 
 });

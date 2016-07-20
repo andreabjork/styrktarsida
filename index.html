@@ -22,18 +22,18 @@
       </header>
       <div class="container">
          <main class="smallScreenFlex columnFlex">
-            <form class="smallScreenFlex columnFlex" action="https://secure.dalpay.is/cgi-bin/order2/processorder1.pl" method="POST">
+            <form class="smallScreenFlex columnFlex" id="dalpayForm" action = "https://secure.dalpay.is/cgi-bin/order2/processorder1.pl" method="POST">
                <ul class="columnFlex">
                <li class="leftFlex"><h1>Styrktarupphæð:</h1></li>
-               <li>
+               <li style="margin-bottom: 200px;">
                   <input type="text" name="upphæð" id="amount" value="1.000 ISK" name="Upphæð" min="1" max="1000000000" step="1"/>
                </li>
-               <li class="leftFlex"><article id="smlyReward"><h2>Megum við senda þér broskall?</h2></article></li>
+               <!--<li class="leftFlex"><article id="smlyReward"><h2>Megum við senda þér broskall?</h2></article></li>
                <li class="rowFlex centerFlex">
                   <label for="amount">Broskallaveski</label>
                   <div class="columnFlex"><input type="text" name="broskallareikningur" id="address" placeholder="BGs1L33mgDz8mUAE5h3bgmuo7s9r5Et8ne" />
                   <p id="smlyInfo">Áttu ekki broskallaveski?<a href="wallet.html"> Smelltu hér</a> til að sækja veski.</p></div>
-               </li>
+               </li>-->
                <li class="rightFlex">
                <!-- ------------------- DALPAY INTEGRATION ------------------- -->
                <input type="hidden" name="__FORM_ID__" value="1777f63f0ab6e468cabd8fa5efe3e3f3a838f4ec">
