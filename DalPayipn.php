@@ -10,7 +10,10 @@
 		/>
 		<span style="margin-bottom: 10px; width: 200px;">
 		<label style="display:block; width: 100px; margin-left:auto; margin-right: auto; font-size: 1em;" for="amount">Broskallaveski</label>
-		<input type="text" name="smly_addr" id="address" placeholder="BGs1L33mgDz8mUAE5h3bgmuo7s9r5Et8ne" style="display:block; margin-left:auto; margin-right: auto; font-size: 1.2em;" />
+		<input type="text" name="smly_addr" id="address" placeholder="BGs1L33mgDz8mUAE5h3bgmuo7s9r5Et8ne" style="display:block; margin-left:auto; margin-right: auto; font-size: 1.2em;" required />
+		</span>
+		<label style="display:block; width: 100px; margin-left:auto; margin-right: auto; font-size: 1em;" for="amount">Netfang</label>
+		<input type="text" name="email_addr" id="email" placeholder="example@example.om" style="display:block; margin-left:auto; margin-right: auto; font-size: 1.2em;" required />
 		</span>
 		</br>
 		<button style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; " type="submit" id="smlyBtn" value="Styrkja &#x00A; Education in a Suitcase" name="submit" alt="Buy Now from DalPay Retail - checkout is secure and private.">Já takk, sendið mér broskall!</button>

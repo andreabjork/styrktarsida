@@ -4,7 +4,8 @@ if(isset($_POST['smly_addr']) && isset($_POST['remote_addr']) && isset($_POST['o
 	$msg = $msg . "wallet:" . $_POST['smly_addr'] . "\n"
 				. "ip:" . $_POST['remote_addr'] . "\n" 
 				. "date:" . $_POST['order_datetime'] . "\n" 
-				. "amount:" . $_POST['total_amount'];
+				. "amount:" . $_POST['total_amount'] . "\n"
+				. "email:" . $_POST['email_addr'];
 } else {
 	$msg = $msg . "Something went wrong when getting one or more of the parameters: smly_addr, remote_Addr, order_datetime, total_amount";
 }
