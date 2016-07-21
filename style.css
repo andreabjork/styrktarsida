@@ -317,6 +317,25 @@ footer a {
   color: #333;
 }
 
+
+.largeArticle {
+  padding: 50px;
+}
+
+
+.largeArticle h1 {
+  margin-left: 20px;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+
+.largeArticle p{
+  margin: 20px;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
 /* For mobile */
 @media screen and (max-width: 900px) {
 
