@@ -74,7 +74,7 @@ header {
         text-decoration: none;
     }
 
-    a:hover {
+    nav a:hover {
         color: #fffffa;
         text-decoration: none;
         background-color: #0F63B3;
